@@ -34,7 +34,7 @@ call gclient sync
 @REM call git checkout -- .
 
 echo =====[ add ArrayBuffer_New_Without_Stl ]=====
-@REM node %~dp0\node-script\add_arraybuffer_new_without_stl.js .
+node %~dp0\node-script\add_arraybuffer_new_without_stl.js .
 
 echo =====[ Building V8 ]=====
 call gn gen out.gn\x64.release -args="target_os=""win"" target_cpu=""x64"" v8_use_external_startup_data=false v8_enable_i18n_support=false is_debug=false v8_static_library=true is_clang=false strip_debug_info=false symbol_level=2 v8_enable_pointer_compression=false"
